@@ -1,5 +1,5 @@
-FROM eclipse-temurin:latest
+FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY ./target/spring-petclinic-3.5.0-SNAPSHOT.jar /app
-RUN javac demo.java
-CMD [ "java", "-jar","/app/*.jar" ]
+COPY target/*.jar app.jar
+EXPOSE 8080
+CMD ["java","-jar","app.jar"]
